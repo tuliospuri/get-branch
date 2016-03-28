@@ -40,10 +40,11 @@ function copyToClipboard(text)
 // Main
 var SEPARATOR = ' - ';
 var title     = getElementsByClassName(document, 'js-card-title')[0].innerText;
-var hasHyphen = title.indexOf(SEPARATOR) != -1;
+var prefix    = title.match(/(s\d*_c\d*)/i);
+var hasPrefix = prefix != undefined;
 
-if (hasHyphen) {
-    copyToClipboard('BCH_' + title.split(SEPARATOR)[0]);
+if (hasPrefix) {
+    copyToClipboard('BCH_' + prefix[0]);
 } else {
     alert('Prefix not found');
 }
