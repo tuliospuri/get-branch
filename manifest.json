@@ -1,6 +1,6 @@
 {
     "name": "Get branch",
-    "version": "1.0",
+    "version": "1.1",
     "description": "In Trello, copy the branch name in a fast way.",
     "author": "Tulio Spuri",
     "background": {
