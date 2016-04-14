@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener(function() {
                 conditions: [
                     new chrome.declarativeContent.PageStateMatcher({
                         pageUrl: {hostEquals: "trello.com", schemes: ["https"], pathPrefix: "/c/"},
-                        css: [".js-card-title"]
+                        css: [".icon-card"]
                     })
                 ],
                 actions: [

@@ -34,17 +34,23 @@ function copyToClipboard(text)
     document.execCommand('SelectAll');
     document.execCommand("Copy", false, null);
     document.body.removeChild(copyDiv);
+
+    return true;
 }
 // End helper functions
 
 // Main
-var SEPARATOR = ' - ';
-var title     = getElementsByClassName(document, 'js-card-title')[0].innerText;
-var prefix    = title.match(/(s\d*_c\d*)/i);
-var hasPrefix = prefix != undefined;
+function main()
+{
+  var title = getElementsByClassName(document, 'card-detail-title-assist')[0].innerText;
+  var prefix = title.match(/s\d+_c\d+/i);
+  var hasPrefix = prefix != undefined;
 
-if (hasPrefix) {
-    copyToClipboard('BCH_' + prefix[0]);
-} else {
-    alert('Prefix not found');
+  if (hasPrefix) {
+      return copyToClipboard('BCH_' + prefix[0]);
+  }
+
+  return alert('Este cartão não tem um prefixo S000_C000 válido!');
 }
+
+main();
