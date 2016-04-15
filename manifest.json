@@ -1,22 +1,32 @@
 {
-    "name": "Get branch",
-    "version": "1.2",
-    "description": "In Trello, copy the branch name in a fast way.",
     "author": "Tulio Spuri",
     "background": {
-        "scripts": ["eventPage.js"],
-        "persistent": false
+        "persistent": false,
+        "scripts": [
+            "eventPage.js"
+        ]
     },
+    "commands": {
+        "_execute_page_action": {
+            "suggested_key": {
+                "windows": "Alt+Q"
+            }
+        }
+    },
+    "description": "In Trello, copy the branch name in a fast way.",
+    "icons": {
+        "128": "icon_128.png",
+        "48": "icon_48.png"
+    },
+    "manifest_version": 2,
+    "name": "Get branch",
     "page_action": {
         "default_icon": "icon_19.png",
         "default_title": "Get branch"
     },
     "permissions": [
-        "declarativeContent", "activeTab", "clipboardWrite"
+        "declarativeContent",
+        "activeTab",
+        "clipboardWrite"
     ],
-    "icons": {
-        "48": "icon_48.png",
-        "128": "icon_128.png"
-    },
-    "manifest_version": 2
 }
