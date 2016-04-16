@@ -14,6 +14,7 @@ chrome.runtime.onInstalled.addListener(function() {
             }
         ]);
     });
+    chrome.tabs.create({url: "installed.html"});
 });
 
 chrome.pageAction.onClicked.addListener(function(tab) {
